@@ -1,0 +1,21 @@
+android {
+    flavorDimensions += "flavor-type"
+
+    productFlavors {
+        dev {
+            dimension "flavor-type"
+            applicationId "com.base.srapp.development"
+            resValue "string", "app_name", "SR App Test Dev"
+        }
+        staging {
+            dimension "flavor-type"
+            applicationId "com.base.srapp.staging"
+            resValue "string", "app_name", "SR App Test Staging"
+        }
+        prod {
+            dimension "flavor-type"
+            applicationId "com.base.srapp"
+            resValue "string", "app_name", "SR App Test"
+        }
+    }
+}

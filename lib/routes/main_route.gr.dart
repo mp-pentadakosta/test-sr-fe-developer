@@ -10,25 +10,6 @@
 part of 'main_route.dart';
 
 /// generated route for
-/// [BottomNavView]
-class BottomNavRoute extends PageRouteInfo<void> {
-  const BottomNavRoute({List<PageRouteInfo>? children})
-      : super(
-          BottomNavRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'BottomNavRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const BottomNavView();
-    },
-  );
-}
-
-/// generated route for
 /// [BottomNavWrapperPage]
 class BottomNavWrapperRoute extends PageRouteInfo<void> {
   const BottomNavWrapperRoute({List<PageRouteInfo>? children})
@@ -48,22 +29,49 @@ class BottomNavWrapperRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomeView]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
+/// [DetailDataView]
+class DetailDataRoute extends PageRouteInfo<DetailDataRouteArgs> {
+  DetailDataRoute({
+    Key? key,
+    required ModelDataDummy detailData,
+    List<PageRouteInfo>? children,
+  }) : super(
+          DetailDataRoute.name,
+          args: DetailDataRouteArgs(
+            key: key,
+            detailData: detailData,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'DetailDataRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const HomeView();
+      final args = data.argsAs<DetailDataRouteArgs>();
+      return DetailDataView(
+        key: args.key,
+        detailData: args.detailData,
+      );
     },
   );
+}
+
+class DetailDataRouteArgs {
+  const DetailDataRouteArgs({
+    this.key,
+    required this.detailData,
+  });
+
+  final Key? key;
+
+  final ModelDataDummy detailData;
+
+  @override
+  String toString() {
+    return 'DetailDataRouteArgs{key: $key, detailData: $detailData}';
+  }
 }
 
 /// generated route for
@@ -86,20 +94,20 @@ class HomeWrapperRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LoginView]
-class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute({List<PageRouteInfo>? children})
+/// [ListDataView]
+class ListDataRoute extends PageRouteInfo<void> {
+  const ListDataRoute({List<PageRouteInfo>? children})
       : super(
-          LoginRoute.name,
+          ListDataRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'LoginRoute';
+  static const String name = 'ListDataRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const LoginView();
+      return const ListDataView();
     },
   );
 }
@@ -124,25 +132,6 @@ class OnBoardWrapperRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ProfileView]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute({List<PageRouteInfo>? children})
-      : super(
-          ProfileRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ProfileRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const ProfileView();
-    },
-  );
-}
-
-/// generated route for
 /// [ProfileWrapperPage]
 class ProfileWrapperRoute extends PageRouteInfo<void> {
   const ProfileWrapperRoute({List<PageRouteInfo>? children})
@@ -157,44 +146,6 @@ class ProfileWrapperRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const ProfileWrapperPage();
-    },
-  );
-}
-
-/// generated route for
-/// [RegisterView]
-class RegisterRoute extends PageRouteInfo<void> {
-  const RegisterRoute({List<PageRouteInfo>? children})
-      : super(
-          RegisterRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'RegisterRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const RegisterView();
-    },
-  );
-}
-
-/// generated route for
-/// [SplashView]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SplashRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SplashView();
     },
   );
 }

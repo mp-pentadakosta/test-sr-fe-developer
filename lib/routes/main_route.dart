@@ -1,11 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
-import '../modules/bottom_nav/bottom_nav_view.dart';
-import '../modules/home/home_view.dart';
-import '../modules/login/login_view.dart';
-import '../modules/profile/profile_view.dart';
-import '../modules/register/register_view.dart';
-import '../modules/splash/splash_view.dart';
+import '../domain/model/model_data_dummy.dart';
+import '../modules/detail_data/detail_data_view.dart';
+import '../modules/list_data/list_data_view.dart';
 import 'wrapper/bottom_nav_wrapper_page.dart';
 import 'wrapper/home_wrapper_page.dart';
 import 'wrapper/on_board_wrapper_page.dart';
@@ -21,54 +19,21 @@ class AppRouter extends RootStackRouter {
       );
 
   @override
-  List<AutoRoute> get routes => [
-        AutoRoute(
+  List<CupertinoRoute> get routes => [
+        CupertinoRoute(
           page: OnBoardWrapperRoute.page,
           initial: true,
           children: [
-            AutoRoute(
-              path: SplashView.routeName,
-              page: SplashRoute.page,
+            CupertinoRoute(
+              page: ListDataRoute.page,
+              path: ListDataView.routeName,
               initial: true,
             ),
-            AutoRoute(
-              path: LoginView.routeName,
-              page: LoginRoute.page,
-            ),
-            AutoRoute(
-              path: RegisterView.routeName,
-              page: RegisterRoute.page,
+            CupertinoRoute(
+              page: DetailDataRoute.page,
+              path: DetailDataView.routeName,
             ),
           ],
         ),
-        AutoRoute(page: BottomNavWrapperRoute.page, children: [
-          AutoRoute(
-            path: BottomNavView.routeName,
-            page: BottomNavRoute.page,
-            initial: true,
-            children: [
-              AutoRoute(
-                page: HomeWrapperRoute.page,
-                children: [
-                  AutoRoute(
-                    path: HomeView.routeName,
-                    page: HomeRoute.page,
-                    initial: true,
-                  ),
-                ],
-              ),
-              AutoRoute(
-                page: ProfileWrapperRoute.page,
-                children: [
-                  AutoRoute(
-                    path: ProfileView.routeName,
-                    page: ProfileRoute.page,
-                    initial: true,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ]),
       ];
 }

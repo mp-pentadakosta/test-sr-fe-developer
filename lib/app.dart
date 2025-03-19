@@ -22,17 +22,15 @@ class App extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: _flavorBanner(
         show: kDebugMode,
-        child: MultiBlocProvider(
-            providers: providersData,
-            child: MaterialApp.router(
-              scaffoldMessengerKey: scaffoldMessengerKey,
-              debugShowCheckedModeBanner: F.banner(),
-              title: F.title,
-              theme: themeData,
-              routerConfig: appRouter.config(
-                navigatorObservers: () => [RouteLogger()],
-              ),
-            )),
+        child: MaterialApp.router(
+          scaffoldMessengerKey: scaffoldMessengerKey,
+          debugShowCheckedModeBanner: F.banner(),
+          title: F.title,
+          theme: themeData,
+          routerConfig: appRouter.config(
+            navigatorObservers: () => [RouteLogger()],
+          ),
+        ),
       ),
     );
   }
@@ -44,7 +42,7 @@ class App extends StatelessWidget {
       show
           ? Banner(
               location: BannerLocation.topStart,
-              message: F.name,
+              message: F.env,
               color: Colors.green,
               textStyle: const TextStyle(
                   fontWeight: FontWeight.w700,

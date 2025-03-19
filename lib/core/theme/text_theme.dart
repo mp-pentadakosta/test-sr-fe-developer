@@ -1,101 +1,89 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class TextThemeData {
   static TextTheme textThemeMaterial3() {
-    return const TextTheme(
-      headlineLarge: TextStyle(
+    return TextTheme(
+      headlineLarge: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
         fontSize: 30,
-        // height: 2.6,
         color: AppColors.backdrop,
       ),
-      headlineMedium: TextStyle(
+      headlineMedium: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w700,
         fontSize: 24,
-        // height: 3.2,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      headlineSmall: TextStyle(
+      headlineSmall: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
         fontSize: 20,
-        // height: 1.6,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      titleLarge: TextStyle(
+      titleLarge: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w700,
         fontSize: 20,
-        // height: 1.6,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      titleMedium: TextStyle(
+      titleMedium: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
         fontSize: 16,
-        // height: 1.6,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      titleSmall: TextStyle(
+      titleSmall: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w700,
         fontSize: 16,
-        // height: 1.6,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      labelLarge: TextStyle(
+      labelLarge: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w400,
         fontSize: 16,
-        // height: 32,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      labelMedium: TextStyle(
+      labelMedium: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w700,
         fontSize: 14,
-        // height: 16,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      labelSmall: TextStyle(
+      labelSmall: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
         fontSize: 14,
-        // height: 16,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      bodyLarge: TextStyle(
+      bodyLarge: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w500,
         fontSize: 14,
-        // height: 16,
         letterSpacing: 0.5,
         color: AppColors.backdrop,
       ),
-      bodyMedium: TextStyle(
+      bodyMedium: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w400,
         fontSize: 14,
-        // height: 16,
         color: AppColors.backdrop,
       ),
-      bodySmall: TextStyle(
+      bodySmall: GoogleFonts.nunito(
         fontStyle: FontStyle.normal,
         fontWeight: FontWeight.w600,
         fontSize: 12,
-        // height: 16,
         color: AppColors.backdrop,
       ),
     );

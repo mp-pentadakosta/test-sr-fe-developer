@@ -115,4 +115,27 @@ extension ISizeExtensions on BuildContext {
       ),
     );
   }
+
+  void showModalBottomSheetCustom({
+    required Widget child,
+    isDismissible = true,
+  }) {
+    showModalBottomSheet(
+      context: this,
+      builder: (context) => child,
+      showDragHandle: true,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+      isDismissible: isDismissible,
+      enableDrag: true,
+      constraints: BoxConstraints(
+        maxHeight: iSize.height * 0.9,
+      ),
+    );
+  }
 }

@@ -1,0 +1,1 @@
+/Users/qyra/Documents/app/test/test-sr-fe-developer/build/app/intermediates/cxx/RelWithDebInfo/2s5q5l4y/obj/x86_64

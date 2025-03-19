@@ -4,6 +4,7 @@ import 'loading.dart';
 
 class ContainerScaffold extends StatelessWidget {
   final bool? loading;
+  final bool? appBar;
   final Color? backgroundColor;
   final Widget child;
   final Widget? leading;
@@ -23,6 +24,7 @@ class ContainerScaffold extends StatelessWidget {
     super.key,
     required this.child,
     this.leading,
+    this.appBar,
     this.loading = false,
     this.title,
     this.centerTitle,
@@ -46,16 +48,18 @@ class ContainerScaffold extends StatelessWidget {
       resizeToAvoidBottomInset: resizeToAvoidBottomInset ?? true,
       backgroundColor: backgroundColor,
       floatingActionButton: floatingActionButton,
-      appBar: AppBar(
-        elevation: elevation,
-        automaticallyImplyLeading: automaticallyImplyLeading ?? true,
-        backgroundColor: Colors.transparent,
-        forceMaterialTransparency: forceMaterialTransparency ?? false,
-        title: title != null ? Text(title ?? '') : null,
-        centerTitle: centerTitle ?? false,
-        actions: actions,
-        leading: leading,
-      ),
+      appBar: (appBar ?? true)
+          ? AppBar(
+              elevation: elevation,
+              automaticallyImplyLeading: automaticallyImplyLeading ?? true,
+              backgroundColor: Colors.transparent,
+              forceMaterialTransparency: forceMaterialTransparency ?? false,
+              title: title != null ? Text(title ?? '') : null,
+              centerTitle: centerTitle ?? false,
+              actions: actions,
+              leading: leading,
+            )
+          : null,
       body: onRefresh != null
           ? RefreshIndicator(
               onRefresh: onRefresh ?? () async {},
