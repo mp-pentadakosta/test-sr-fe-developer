@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:sr_app_test/core/extensions/context_extensions.dart';
-import 'package:sr_app_test/core/theme/app_colors.dart';
-import 'package:sr_app_test/domain/model/model_data_dummy.dart';
-import 'package:sr_app_test/modules/detail_data/detail_data_cubit.dart';
-import 'package:sr_app_test/modules/detail_data/widget/widget_package.dart';
-import 'package:sr_app_test/widgets/image_widget.dart';
+import '../../core/extensions/context_extensions.dart';
+import '../../core/theme/app_colors.dart';
+import '../../domain/model/model_data_dummy.dart';
+import '../../modules/detail_data/detail_data_cubit.dart';
+import '../../modules/detail_data/widget/widget_package.dart';
+import '../../widgets/image_widget.dart';
 
 import 'widget/tab_bar_detail/tab_bar_detail_data.dart';
 

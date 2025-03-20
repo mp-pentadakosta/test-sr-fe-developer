@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sr_app_test/widgets/image_widget.dart';
+import '../../../../widgets/image_widget.dart';
 import '../../../../domain/model/model_data_dummy.dart';
 import '../../../../modules/detail_data/widget/tab_bar_detail/tab_bar_detail_cubit.dart';
 import '../../../../core/extensions/context_extensions.dart';

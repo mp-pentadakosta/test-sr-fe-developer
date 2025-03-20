@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sr_app_test/core/theme/app_colors.dart';
+import '../../../core/theme/app_colors.dart';
 import '../../../core/extensions/context_extensions.dart';
 import '../../../domain/model/model_data_dummy.dart';
 import '../../../widgets/image_widget.dart';

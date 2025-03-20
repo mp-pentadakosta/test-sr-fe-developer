@@ -1,10 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/theme/theme_data.dart';
 import 'core/env/flavors.dart';
-import 'provider/multi_bloc_data.dart';
 import 'routes/main_route.dart';
 import 'routes/route_logger.dart';
 

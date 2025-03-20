@@ -1,17 +1,14 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:sr_app_test/core/extensions/context_extensions.dart';
-import 'package:sr_app_test/core/theme/app_colors.dart';
-import 'package:sr_app_test/domain/model/model_data_dummy.dart';
-import 'package:sr_app_test/modules/list_data/list_data_cubit.dart';
-import 'package:sr_app_test/modules/list_data/widget/card_list_data.dart';
-import 'package:sr_app_test/modules/list_data/widget/header_list_data.dart';
-import 'package:sr_app_test/widgets/button_widget/button_widget.dart';
-import 'package:sr_app_test/widgets/container_scaffold.dart';
-import 'package:sr_app_test/widgets/image_widget.dart';
+import '../../core/extensions/context_extensions.dart';
+import '../../core/theme/app_colors.dart';
+import '../../domain/model/model_data_dummy.dart';
+import '../../modules/list_data/list_data_cubit.dart';
+import '../../modules/list_data/widget/card_list_data.dart';
+import '../../modules/list_data/widget/header_list_data.dart';
+import '../../widgets/container_scaffold.dart';
 
 import '../../routes/main_route.dart';
 
