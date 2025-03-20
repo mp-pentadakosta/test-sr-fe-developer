@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:sr_app_test/core/extensions/context_extensions.dart';
 import 'package:sr_app_test/core/theme/app_colors.dart';
 import 'package:sr_app_test/domain/model/model_data_dummy.dart';
@@ -46,7 +47,9 @@ class _DetailDataBody extends StatelessWidget {
                   expandedHeight: context.mQHeight(0.25),
                   floating: false,
                   pinned: true,
-                  flexibleSpace: const _WidgetImage(),
+                  flexibleSpace: state.isLoading
+                      ? const Skeletonizer(child: _WidgetImage())
+                      : const _WidgetImage(),
                 ),
               ];
             },
@@ -55,126 +58,214 @@ class _DetailDataBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   context.sbHeight(context.padding2),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: context.padding2),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          state.detailData.title,
-                          style: context.headlineMedium,
-                        ),
-                        context.sbHeight(context.padding0),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.pin_drop,
-                              size: context.padding2,
-                              color: AppColors.primary,
-                            ),
-                            context.sbWidth(context.padding0),
-                            Text(
-                              state.detailData.location,
-                              style: context.titleSmall,
-                            ),
-                          ],
-                        ),
-                        context.sbHeight(context.padding0),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.emoji_events,
-                              size: context.padding2,
-                              color: AppColors.primary,
-                            ),
-                            context.sbWidth(context.padding0),
-                            RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: '${state.detailData.rating} ',
-                                    style: context.bodyLarge?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        '/ 5.0 (${state.detailData.totalRating} reviews)',
-                                    style: context.bodyMedium,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  if (state.isLoading)
+                    const Skeletonizer(child: _TitleWidget()),
+                  if (!state.isLoading) const _TitleWidget(),
                   context.sbHeight(context.padding2),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: context.padding2),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(context.padding2),
-                        color: AppColors.background,
-                      ),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: context.padding2,
-                        vertical: context.padding2,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Deskripsi',
-                            style: context.titleSmall,
-                          ),
-                          context.sbHeight(context.padding1),
-                          Text(
-                            state.detailData.description,
-                            maxLines: 2,
-                            overflow: TextOverflow.fade,
-                          ),
-                          context.sbHeight(context.padding1 + context.padding0),
-                          InkWell(
-                            onTap: () {
-                              context.showModalBottomSheetCustom(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    TabBarDetailData(
-                                      description: state.detailData.description,
-                                      tnc: state.detailData.termsAndConditions,
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                            child: Text(
-                              'Baca Selengkapnya',
-                              style: context.titleMedium?.copyWith(
-                                color: AppColors.elevationLevel(
-                                  ElevationType.level13,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  if (state.isLoading) const Skeletonizer(child: _WidgetDesc()),
+                  if (!state.isLoading) const _WidgetDesc(),
                   context.sbHeight(context.padding1 + context.padding0),
                   Divider(
                     thickness: context.padding1,
                     height: context.padding1,
                     color: AppColors.background,
                   ),
-                  WidgetPackage(
-                      listPricePackage: state.detailData.pricePackage),
+                  if (state.isLoading)
+                    Skeletonizer(
+                      child: WidgetPackage(
+                        listPricePackage: [
+                          ...List.generate(
+                            3,
+                            (index) => PricePackage(
+                              title: 'Lorem Ipsum',
+                              description:
+                                  'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
+                              excludedFacilities: [
+                                'excludedFacilities',
+                                'excludedFacilities',
+                              ],
+                              includedFacilities: [
+                                'includedFacilities',
+                                'includedFacilities',
+                              ],
+                              maxParticipants: 1,
+                              price: 'IDR 20.000',
+                              termsAndConditions:
+                                  'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  if (!state.isLoading)
+                    WidgetPackage(
+                      listPricePackage: state.detailData.pricePackage,
+                    ),
                   context.sbHeight(context.iPadding.bottom + context.padding4),
                 ],
               ),
             ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _WidgetDesc extends StatelessWidget {
+  const _WidgetDesc();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<DetailDataCubit, DetailDataState>(
+      builder: (context, state) {
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.padding2),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(context.padding2),
+              color: AppColors.background,
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: context.padding2,
+              vertical: context.padding2,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Deskripsi',
+                  style: context.titleSmall,
+                ),
+                context.sbHeight(context.padding1),
+                Text(
+                  state.detailData.description,
+                  maxLines: 2,
+                  overflow: TextOverflow.fade,
+                ),
+                context.sbHeight(context.padding1 + context.padding0),
+                InkWell(
+                  onTap: () {
+                    context.showModalBottomSheetCustom(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          TabBarDetailData(
+                            detailData: state.detailData,
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Baca Selengkapnya',
+                    style: context.titleMedium?.copyWith(
+                      color: AppColors.elevationLevel(
+                        ElevationType.level13,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _TitleWidget extends StatelessWidget {
+  const _TitleWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<DetailDataCubit, DetailDataState>(
+      builder: (context, state) {
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.padding2),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                state.detailData.title,
+                style: context.headlineMedium,
+              ),
+              context.sbHeight(context.padding0),
+              Row(
+                children: [
+                  Icon(
+                    Icons.pin_drop,
+                    size: context.padding2,
+                    color: AppColors.primary,
+                  ),
+                  context.sbWidth(context.padding0),
+                  Text(
+                    state.detailData.location,
+                    style: context.titleSmall,
+                  ),
+                ],
+              ),
+              context.sbHeight(context.padding0),
+              Row(
+                children: [
+                  Icon(
+                    Icons.emoji_events,
+                    size: context.padding2,
+                    color: AppColors.primary,
+                  ),
+                  context.sbWidth(context.padding0),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '${state.detailData.rating} ',
+                          style: context.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text:
+                              '/ 5.0 (${state.detailData.totalRating} reviews)',
+                          style: context.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              context.sbHeight(context.padding0),
+              Row(
+                children: [
+                  Icon(
+                    Icons.people_sharp,
+                    size: context.padding2,
+                    color: AppColors.primary,
+                  ),
+                  context.sbWidth(context.padding0),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '${state.detailData.currentParticipants}',
+                          style: context.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '/${state.detailData.maxParticipants}',
+                          style: context.bodyMedium?.copyWith(),
+                        ),
+                        TextSpan(
+                          text: ' Peserta saat ini',
+                          style: context.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },
@@ -235,35 +326,42 @@ class _WidgetImageState extends State<_WidgetImage> {
                   ],
                 ),
               ),
-              Positioned(
-                bottom: context.padding1,
-                left: 0,
-                right: 0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    state.detailData.photos.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        height: 10,
-                        width: index == _currentIndex ? 14 : 10,
-                        decoration: BoxDecoration(
-                          color: index == _currentIndex
-                              ? AppColors.primary
-                              : AppColors.backdrop,
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                      ),
+              if (!state.isLoading)
+                Positioned(
+                  bottom: context.padding1,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: _pointIndicator(
+                      _currentIndex,
+                      state.detailData.photos.length,
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         );
       },
+    );
+  }
+
+  List<Widget> _pointIndicator(int index, int length) {
+    return List.generate(
+      length,
+      (index) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 2),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          height: 10,
+          width: index == _currentIndex ? 14 : 10,
+          decoration: BoxDecoration(
+            color:
+                index == _currentIndex ? AppColors.primary : AppColors.backdrop,
+            borderRadius: BorderRadius.circular(100),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -20,6 +20,9 @@ class CardListData extends StatelessWidget {
     return Column(
       children: [
         InkWell(
+          overlayColor: WidgetStateProperty.all(
+            AppColors.elevationLevel(ElevationType.level0),
+          ),
           onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
@@ -68,11 +71,15 @@ class CardListData extends StatelessWidget {
                                                       data.photos.length - 1
                                               ? const Radius.circular(0)
                                               : Radius.circular(
-                                                  context.padding2),
-                                          bottomRight: index == 0
+                                                  context.padding2,
+                                                ),
+                                          bottomRight: index == 0 ||
+                                                  index ==
+                                                      data.photos.length - 1
                                               ? const Radius.circular(0)
                                               : Radius.circular(
-                                                  context.padding2),
+                                                  context.padding2,
+                                                ),
                                           topLeft: index == 0
                                               ? Radius.circular(
                                                   context.padding2)
@@ -80,12 +87,12 @@ class CardListData extends StatelessWidget {
                                           topRight: index == 0
                                               ? const Radius.circular(0)
                                               : Radius.circular(
-                                                  context.padding2),
+                                                  context.padding2,
+                                                ),
                                         ),
                                       ),
-                                      context.sbWidth(
-                                        context.padding0,
-                                      ),
+                                      if (index != data.photos.length - 1)
+                                        context.sbWidth(context.padding0),
                                     ],
                                   );
                           },

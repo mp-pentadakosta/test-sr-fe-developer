@@ -23,6 +23,7 @@ List<ModelDataDummy> listDataDummy = [
     termsAndConditions:
         'Minimal 2 peserta. Pembatalan maksimal 7 hari sebelum keberangkatan.',
     maxParticipants: 10,
+    currentParticipants: 5,
     totalRating: 127,
     pricePackage: [
       PricePackage(
@@ -78,6 +79,48 @@ List<ModelDataDummy> listDataDummy = [
         maxParticipants: 10,
       ),
     ],
+    ratings: [
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '12 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/10.jpg',
+      ),
+      Rating(
+        rating: 4.5,
+        review:
+            'Saya sangat menikmati perjalanan ini. Hotelnya sangat nyaman dan makanannya enak.',
+        name: 'Jane Doe',
+        date: '15 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/20.jpg',
+      ),
+      Rating(
+        rating: 4.9,
+        review:
+            'Pemandu wisata sangat profesional dan membantu. Saya sangat merekomendasikan paket ini.',
+        name: 'John Smith',
+        date: '18 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/30.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '20 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/40.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '22 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/50.jpg',
+      ),
+    ],
   ),
   ModelDataDummy(
     title: 'Overland Flores 5D4N',
@@ -101,6 +144,7 @@ List<ModelDataDummy> listDataDummy = [
     termsAndConditions:
         'Minimal 4 peserta. Tidak termasuk tiket masuk ke Taman Nasional Komodo.',
     maxParticipants: 15,
+    currentParticipants: 10,
     totalRating: 102,
     pricePackage: [
       PricePackage(
@@ -138,6 +182,56 @@ List<ModelDataDummy> listDataDummy = [
         maxParticipants: 15,
       ),
     ],
+    ratings: [
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '20 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/45.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '22 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/15.jpg',
+      ),
+      Rating(
+        rating: 4.5,
+        review:
+            'Saya sangat menikmati perjalanan ini. Hotelnya sangat nyaman dan makanannya enak.',
+        name: 'Jane Doe',
+        date: '25 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/33.jpg',
+      ),
+      Rating(
+        rating: 4.9,
+        review:
+            'Pemandu wisata sangat profesional dan membantu. Saya sangat merekomendasikan paket ini.',
+        name: 'John Smith',
+        date: '28 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/21.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '30 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/50.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '2 Februari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/18.jpg',
+      ),
+    ],
   ),
   ModelDataDummy(
     title: 'Raja Ampat Adventure 4D3N',
@@ -164,6 +258,7 @@ List<ModelDataDummy> listDataDummy = [
     termsAndConditions:
         'Minimal 6 peserta. Pembatalan maksimal 10 hari sebelum keberangkatan.',
     maxParticipants: 12,
+    currentParticipants: 8,
     totalRating: 45,
     pricePackage: [
       PricePackage(
@@ -216,6 +311,56 @@ List<ModelDataDummy> listDataDummy = [
         maxParticipants: 12,
       ),
     ],
+    ratings: [
+      Rating(
+        rating: 4.9,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '20 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/12.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '22 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/22.jpg',
+      ),
+      Rating(
+        rating: 4.5,
+        review:
+            'Saya sangat menikmati perjalanan ini. Hotelnya sangat nyaman dan makanannya enak.',
+        name: 'Jane Doe',
+        date: '25 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/34.jpg',
+      ),
+      Rating(
+        rating: 4.9,
+        review:
+            'Pemandu wisata sangat profesional dan membantu. Saya sangat merekomendasikan paket ini.',
+        name: 'John Smith',
+        date: '28 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/44.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '30 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/55.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '2 Februari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/66.jpg',
+      ),
+    ],
   ),
   ModelDataDummy(
     title: 'Bromo Sunrise Tour 2D1N',
@@ -238,6 +383,7 @@ List<ModelDataDummy> listDataDummy = [
     termsAndConditions:
         'Minimal 3 peserta. Tour dimulai dari Malang atau Surabaya.',
     maxParticipants: 8,
+    currentParticipants: 6,
     totalRating: 78,
     pricePackage: [
       PricePackage(
@@ -270,6 +416,56 @@ List<ModelDataDummy> listDataDummy = [
         maxParticipants: 8,
       ),
     ],
+    ratings: [
+      Rating(
+        rating: 4.6,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '20 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/14.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '22 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/25.jpg',
+      ),
+      Rating(
+        rating: 4.5,
+        review:
+            'Saya sangat menikmati perjalanan ini. Hotelnya sangat nyaman dan makanannya enak.',
+        name: 'Jane Doe',
+        date: '25 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/37.jpg',
+      ),
+      Rating(
+        rating: 4.9,
+        review:
+            'Pemandu wisata sangat profesional dan membantu. Saya sangat merekomendasikan paket ini.',
+        name: 'John Smith',
+        date: '28 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/41.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '30 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/53.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '2 Februari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+      ),
+    ],
   ),
   ModelDataDummy(
     title: 'Labuan Bajo Sailing Trip 3D2N',
@@ -293,6 +489,7 @@ List<ModelDataDummy> listDataDummy = [
     termsAndConditions:
         'Minimal 5 peserta. Kapal berangkat dari Pelabuhan Labuan Bajo.',
     maxParticipants: 14,
+    currentParticipants: 9,
     totalRating: 89,
     pricePackage: [
       PricePackage(
@@ -329,6 +526,48 @@ List<ModelDataDummy> listDataDummy = [
         excludedFacilities: ['Pajak wisata lokal', 'Asuransi perjalanan'],
         termsAndConditions: 'Minimal 5 peserta.',
         maxParticipants: 14,
+      ),
+    ],
+    ratings: [
+      Rating(
+        rating: 4.8,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '20 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/29.jpg',
+      ),
+      Rating(
+        rating: 4.9,
+        review:
+            'Pemandu wisata sangat profesional dan membantu. Saya sangat merekomendasikan paket ini.',
+        name: 'John Smith',
+        date: '28 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/35.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '30 Januari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/42.jpg',
+      ),
+      Rating(
+        rating: 4.7,
+        review:
+            'Perjalanan yang menyenangkan. Destinasi yang dikunjungi sangat menarik.',
+        name: 'Jane Smith',
+        date: '2 Februari 2022',
+        photo: 'https://randomuser.me/api/portraits/women/51.jpg',
+      ),
+      Rating(
+        rating: 4.8,
+        review:
+            'Paket wisata yang sangat menyenangkan. Pemandu wisata sangat ramah dan informatif.',
+        name: 'John Doe',
+        date: '4 Februari 2022',
+        photo: 'https://randomuser.me/api/portraits/men/63.jpg',
       ),
     ],
   ),

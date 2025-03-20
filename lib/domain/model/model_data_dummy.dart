@@ -11,6 +11,8 @@ class ModelDataDummy {
   final List<PricePackage> pricePackage;
   final String termsAndConditions;
   final int maxParticipants;
+  final int currentParticipants;
+  final List<Rating> ratings;
 
   ModelDataDummy({
     required this.title,
@@ -25,6 +27,8 @@ class ModelDataDummy {
     required this.termsAndConditions,
     required this.maxParticipants,
     required this.pricePackage,
+    required this.currentParticipants,
+    required this.ratings,
   });
 }
 
@@ -45,5 +49,21 @@ class PricePackage {
     required this.excludedFacilities,
     required this.termsAndConditions,
     required this.maxParticipants,
+  });
+}
+
+class Rating {
+  final double rating;
+  final String review;
+  final String name;
+  final String date;
+  final String photo;
+
+  Rating({
+    required this.rating,
+    required this.review,
+    required this.name,
+    required this.date,
+    required this.photo,
   });
 }

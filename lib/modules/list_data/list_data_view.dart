@@ -69,6 +69,8 @@ class _ListDataBody extends StatelessWidget {
                                   price: 'IDR 20.000',
                                   rating: 4.5,
                                   totalRating: 100,
+                                  currentParticipants: 1,
+                                  ratings: [],
                                   description:
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae nunc.',
                                   includedFacilities: [
